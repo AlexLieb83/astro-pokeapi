@@ -1,0 +1,61 @@
+---
+interface PokemonType{
+	type: {
+		name: string;
+	}
+}
+
+//fetch data
+const pikachu = await fetch('https://pokeapi.co/api/v2/pokemon/pikachu').then((response) =>
+  response.json()
+);
+
+//get types from data
+const pikachuTypes: string[] = pikachu.types.map((type: PokemonType) => type.type.name);
+
+---
+
+<h1>{pikachu.name}</h1>
+<h2>{pikachuTypes[0]}</h2>
+
+<!-- TODO -->
+<!-- add more info to screen -->
+<!-- Make it modular, so user can search for any pokemon -->
+
+<!-- IDEAS -->
+<!-- Pokedex Web App: Create a web application where users can search for Pokemon by name or ID and view details 
+    such as their types, abilities, stats, and images retrieved from the PokeAPI.
+
+Random Pokemon Generator: Build a simple app that displays a random Pokemon each time the user refreshes the page.
+You can fetch random Pokemon data from the PokeAPI and display it dynamically.
+
+Pokemon Battle Simulator: Develop a turn-based battle simulator where users can select their Pokemon and battle 
+against either a computer-controlled opponent or another player. Use the PokeAPI to fetch Pokemon data and simulate 
+battles based on their stats and types.
+
+Team Builder Tool: Create a tool that allows users to build and manage their Pokemon teams. Users can search for 
+Pokemon, add them to their team, and view detailed information about each team member fetched from the PokeAPI.
+
+Type Effectiveness Checker: Build a tool where users can input the types of two Pokemon, and the application will 
+determine the effectiveness of attacks between them based on their types. Use data from the PokeAPI to calculate type 
+effectiveness.
+
+Pokemon Trading Card Game Simulator: Develop a browser-based version of the Pokemon Trading Card Game where users can 
+build decks, battle against AI or other players, and collect digital cards. Utilize the PokeAPI to fetch Pokemon card 
+data.
+
+Pokemon Go Companion App: Create an app that serves as a companion tool for Pokemon Go players. Include features such 
+as a Pokedex, IV calculator, type effectiveness guide, and news feed about the game, all using data retrieved from 
+the PokeAPI.
+
+Pokemon Quiz Game: Develop a quiz game where users are asked questions about Pokemon, such as their types, abilities, 
+and evolutions. Retrieve relevant data from the PokeAPI to generate quiz questions dynamically.
+
+Pokemon Map Viewer: Build an interactive map that displays the locations of Pokemon spawns, gyms, and PokeStops in a 
+given area. Use the PokeAPI to fetch location data and display it on the map.
+
+Pokemon Breeding Simulator: Create a breeding simulator where users can select two Pokemon and simulate breeding 
+them to see the possible offspring. Use data from the PokeAPI to determine breeding compatibility and offspring 
+characteristics. -->
+
+

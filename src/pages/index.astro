@@ -1,19 +1,5 @@
 ---
-interface PokemonType{
-	type: {
-		name: string;
-	}
-}
-
-const response = await fetch(`https://pokeapi.co/api/v2/pokemon/pikachu`);
-const data = await response.json();
-const pokemon = data;
-const types: string[] = data.types.map((type: PokemonType) => type.type.name);
+import GetPikachu from '../components/GetPikachu.astro'
 ---
 
-<!-- TODO -->
-<!-- breakout logic to seperate tsx file -->
-<!-- add more info to screen -->
-
-<h1>{pokemon.name}</h1>
-<h2>{types[0]}</h2>
+<GetPikachu />
